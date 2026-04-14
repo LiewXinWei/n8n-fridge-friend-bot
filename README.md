@@ -28,6 +28,7 @@ This project allows users to send a food photo through Telegram and receive reci
 
 ## Demo
 Watch the project demo below.
+<!-- Paste your video link or embedded GitHub video asset below this line -->
 
 ## Preview
 You can add screenshots below to show the bot flow, such as:
@@ -71,4 +72,3 @@ A user sends a photo of ingredients such as eggs, mushrooms, and corn. The bot d
 - Add fallback handling when recipe steps are unavailable
 - Support more recipe filters such as vegetarian, high-protein, or low-calorie
 
-<!-- Paste your video link or embedded GitHub video asset below this line -->
