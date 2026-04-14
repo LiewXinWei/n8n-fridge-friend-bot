@@ -5,6 +5,16 @@ Telegram bot workflow built with n8n that detects ingredients from food photos u
 ## Overview
 This workflow lets users send a food photo through Telegram. It analyzes the image with Gemini, extracts visible ingredients, searches for recipes using Spoonacular, and sends recipe suggestions with steps back to the user on Telegram.
 
+## Demo
+Watch the project demo here: [Demo Video](assets/demo-video.mp4)
+
+## Preview
+You can add screenshots below to show the bot flow, such as:
+- Telegram bot receiving a food photo
+- Detected ingredients message
+- Recipe suggestions and cooking steps
+- n8n workflow overview
+
 ## Features
 - Accepts food photo uploads from Telegram
 - Detects visible ingredients from the image using Gemini
@@ -43,6 +53,7 @@ This workflow lets users send a food photo through Telegram. It analyzes the ima
 ## Files
 - `fridge-friend-workflow.json` — main n8n workflow export
 - `README.md` — project documentation
+- `assets/demo-video.mp4` — project demo video
 
 ## Notes
 - This repository contains a cleaned workflow export
