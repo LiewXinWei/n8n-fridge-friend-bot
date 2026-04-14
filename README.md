@@ -3,10 +3,31 @@
 Telegram bot workflow built with n8n that detects ingredients from food photos using Gemini and suggests matching recipes using Spoonacular.
 
 ## Overview
-This workflow lets users send a food photo through Telegram. It analyzes the image with Gemini, extracts visible ingredients, searches for recipes using Spoonacular, and sends recipe suggestions with steps back to the user on Telegram.
+This project allows users to send a food photo through Telegram and receive recipe suggestions based on the visible ingredients in the image. The workflow uses Gemini to analyze the uploaded photo, extract ingredient names, and then uses Spoonacular to search for recipes that best match those ingredients. The bot finally returns recipe suggestions and cooking steps directly in Telegram.
+
+## Features
+- Accepts food photo uploads from Telegram
+- Detects visible ingredients using Gemini
+- Cleans, formats, and deduplicates detected ingredients
+- Searches Spoonacular for recipe matches
+- Prioritizes recipes that use more of the detected ingredients
+- Fetches recipe instructions for multiple recipe results
+- Sends ingredient summaries, recipe suggestions, and cooking steps back to Telegram
+
+## Workflow Process
+1. User sends a food photo in Telegram
+2. The bot checks whether the message contains an image
+3. Telegram retrieves the uploaded file
+4. Gemini analyzes the image and identifies visible ingredients
+5. Ingredient names are cleaned and processed
+6. The detected ingredient list is sent back to the user
+7. Spoonacular is queried for matching recipes
+8. Recipes are ranked based on ingredient usage
+9. Recipe steps are retrieved
+10. Final formatted recipe suggestions are sent back to Telegram
 
 ## Demo
-Watch the project demo here: [Demo Video](assets/demo-video.mp4)
+Watch the project demo below.
 
 ## Preview
 You can add screenshots below to show the bot flow, such as:
@@ -14,27 +35,6 @@ You can add screenshots below to show the bot flow, such as:
 - Detected ingredients message
 - Recipe suggestions and cooking steps
 - n8n workflow overview
-
-## Features
-- Accepts food photo uploads from Telegram
-- Detects visible ingredients from the image using Gemini
-- Cleans and processes detected ingredient names
-- Searches Spoonacular for matching recipes
-- Prioritizes recipes that use more of the detected ingredients
-- Fetches recipe instructions for multiple recipe results
-- Sends ingredient list, recipe suggestions, and steps back to Telegram
-
-## Workflow Process
-1. User sends a food photo in Telegram
-2. Bot detects whether the message contains an image
-3. Telegram file is retrieved
-4. Gemini analyzes the image and identifies visible ingredients
-5. Ingredients are cleaned, deduplicated, and formatted
-6. Bot sends the detected ingredients back to the user
-7. Spoonacular is queried for recipe matches
-8. Matching recipes are ranked and prepared
-9. Recipe instructions are fetched
-10. Final recipe messages are formatted and sent to Telegram
 
 ## Requirements
 - n8n
@@ -45,27 +45,30 @@ You can add screenshots below to show the bot flow, such as:
 ## Setup
 1. Clone or download this repository
 2. Import the workflow JSON file into n8n
-3. Reconnect your Telegram and Gemini credentials
-4. Add your own Spoonacular API key
-5. Test the workflow with a Telegram photo
-6. Activate the workflow
+3. Reconnect your Telegram credentials in n8n
+4. Reconnect your Google Gemini credentials in n8n
+5. Add your own Spoonacular API key
+6. Test the workflow using a Telegram food photo
+7. Activate the workflow
 
 ## Files
 - `fridge-friend-workflow.json` — main n8n workflow export
 - `README.md` — project documentation
-- `assets/demo-video.mp4` — project demo video
 
 ## Notes
 - This repository contains a cleaned workflow export
 - Secrets, credential IDs, webhook IDs, and private values should be removed before uploading to GitHub
 - Replace all placeholder credentials with your own before running the workflow
-- Sample pinned data should also be removed if it contains personal or test information
+- Remove pinned sample data if it contains personal, test, or sensitive information
 
 ## Example Use Case
-A user sends a photo of ingredients such as eggs, mushrooms, and corn. The bot detects the ingredients, searches for recipes that match them, and replies with recipe ideas and cooking steps.
+A user sends a photo of ingredients such as eggs, mushrooms, and corn. The bot detects the visible ingredients, searches for matching recipes, and replies with recipe suggestions together with cooking steps.
 
 ## Future Improvements
 - Add support for text-based ingredient input
-- Improve ingredient matching accuracy
-- Add fallback recipe formatting for missing instructions
-- Support more recipe filtering options such as vegetarian or low-calorie
+- Improve ingredient detection accuracy
+- Improve recipe matching logic
+- Add fallback handling when recipe steps are unavailable
+- Support more recipe filters such as vegetarian, high-protein, or low-calorie
+
+<!-- Paste your video link or embedded GitHub video asset below this line -->
