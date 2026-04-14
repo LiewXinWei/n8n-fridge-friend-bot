@@ -139,7 +139,7 @@
           "mode": "list",
           "cachedResultName": "models/gemini-2.5-pro"
         },
-        "text": "Analyze this image and list all visible food ingredients/items. Return a bullet list with just the names (no explanations). If something is unclear, label it as 'unsure'.",
+        "text": "List only the visible food ingredients/items in this image.Return only the names, separated by bullets list.",
         "inputType": "binary",
         "options": {}
       },
